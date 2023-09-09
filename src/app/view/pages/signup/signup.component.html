@@ -1,0 +1,199 @@
+<header id="loginHeader">
+    <div class="img logo-dash">
+        <img src="./../../../../assets/img/logo video (1).gif" alt="logo">
+        <p>CLOVERLEAF <br><span class="logo-sm-txt">An Industry 4.0</span></p>
+    </div>
+   
+        <div class="headerMain">
+        <h1>Building the Future of Machine Service</h1>
+        <ul>
+        <li><a routerLink="/signup" class="signbtN">Sign Up</a></li>
+        <li class="logBtn"><a routerLink="/login" class="signbtN">Log In</a></li>
+        </ul>
+   
+    </div>
+</header>
+
+
+<main class="mainClass">
+    <div class="loginForm">
+        <form>
+            <h2>Sign Up your start session</h2>
+            <div class="inputWithIcon">
+                <label for="name">Name</label>
+                <input (click)="message_name = null" 
+                id="name" 
+                type="text"
+                [(ngModel)]="user.name" 
+                placeholder="Name" 
+                name="name"
+                pattern="/^[^\s@]+@[^\s@]+\.[^\s@]+$/"
+                required
+                #name = "ngModel"
+                minlength="4">
+                <i class='bx bx-user icon'></i>
+            </div>
+            <p class="p1" style="color: red;">
+                <span *ngIf="message_name">
+                  {{message_name}}
+                 </span>
+                <span  *ngIf="name.invalid && (name.dirty || name.touched)&&message_name==null"
+                class="alert ">
+              <span *ngIf="name.errors?.['required'] && (name.dirty || name.touched)" class="alert">
+                Name is required.
+              </span>
+              <span *ngIf="name.errors?.['minlength']" class="alert">
+                Name must be at least 4 characters.
+              </span>
+             </span></p>
+            <div class="inputWithIcon">
+                <label for="email">Email</label>
+                <input (click)="message_email = null" 
+                id="name" 
+                type="text"
+                [(ngModel)]="user.email" 
+                placeholder="Enter your Email" 
+                name="email"
+                pattern="/^[^\s@]+@[^\s@]+\.[^\s@]+$/"
+                required
+                #email = "ngModel"
+                minlength="4">
+                <i class='bx bx-envelope icon'></i>
+            </div>
+            <p class="p1" class="alert" > 
+                <span *ngIf="message_email">
+                   {{message_email}}
+                  </span>
+                <span  *ngIf="email.invalid && (email.dirty || email.touched)&&message_email==null"
+            >
+            <span *ngIf="email.errors?.['required'] && (email.dirty || email.touched)" class="alert">
+              email is required.
+            </span>
+           
+            <span *ngIf="!customEmailRegex.test(user.email)&&user.email!=''&&!email.errors?.['minlength'] " >
+              <!-- Password must contain at least osne uppercase,lowercase,number,special character. -->
+              Email should be like example@gmail.com
+            </span>
+            <span *ngIf="email.errors?.['minlength']" class="alert">
+              Email must be at least 4 characters.
+            </span>
+           </span></p>
+            <div class="inputWithIcon">
+                <label for="phone">Phone</label>
+                <input (click)="message_phone = null" 
+                id="phone" 
+                type="tel"
+                [(ngModel)]="user.phone" 
+                placeholder="Enter your Phone Number"
+                name="phone"
+                pattern="/^[^\s@]+@[^\s@]+\.[^\s@]+$/"
+                required
+                #phone = "ngModel"
+                minlength="10">
+                <i class='bx bx-phone icon'></i>
+            </div>
+            <p class="p1" style="color: red;">
+                <span *ngIf="message_phone">
+                  {{message_phone}}
+                 </span>
+                <span  *ngIf="phone.invalid && (phone.dirty || phone.touched)&&message_phone==null"
+                class="alert ">
+              <span *ngIf="phone.errors?.['required'] && (phone.dirty || phone.touched)" class="alert">
+                Phone number is required.
+              </span>
+              <span *ngIf="phone.errors?.['minlength']" class="alert">
+                Phone number must be at least 10 digits.
+              </span>
+             </span></p>
+            <div class="inputWithIcon">
+                <label for="password">Password</label>
+                <input  
+                (click)="message_password = null" 
+                id="password"
+                type="password"
+                [(ngModel)]="user.password" 
+                placeholder="Enter your password" 
+                name="password" 
+                pattern="/^[^\s@]+@[^\s@]+\.[^\s@]+$/"
+                required
+                #password = "ngModel"
+                minlength="4">
+                <i class='bx bx-lock icon'></i>
+            </div>
+            <p class="p1" style="color: red;" class="alert" >
+                  
+                <span *ngIf="message_password">
+                   {{message_password}}
+                  </span>
+                <span  *ngIf="password.invalid && (password.dirty || password.touched)&&message_password==null"
+              >
+             
+              <span *ngIf="password.errors?.['required'] && (password.dirty || password.touched)" >
+              
+              Password is required.
+            </span>
+            <span *ngIf="message_password">
+             {{message_password}}
+            </span>
+            <span *ngIf="!customPasswordRegex.test(user.password)" >
+              <!-- Password must contain at least osne uppercase,lowercase,number,special character. -->
+              Password like Example@12
+            </span>
+            <span *ngIf="password.errors?.['minlength']" >
+              Password should be more then 8 characters.
+            </span>
+            <span *ngIf="password.errors?.['maxlength']" >
+              Password can not be longer than 20 characters.
+            </span>
+           </span></p>
+            <div class="inputWithIcon">
+                <label for="password">Confirm Password</label>
+                <input (click)="message_cpassword = null" 
+                id="password"
+                type="password"
+                [(ngModel)]="user.cpassword" 
+                placeholder="Enter your password" 
+                name="cpassword" 
+                pattern="/^[^\s@]+@[^\s@]+\.[^\s@]+$/"
+                required
+                #cpassword = "ngModel"
+                minlength="4">
+                <i class='bx bx-lock icon'></i>
+            </div>
+            <p class="p1" style="color: red;" class="alert" >
+                  
+                <span *ngIf="message_cpassword">
+                   {{message_cpassword}}
+                  </span>
+                <span  *ngIf="cpassword.invalid && (cpassword.dirty || cpassword.touched)&&message_cpassword==null"
+              >
+             
+              <span *ngIf="cpassword.errors?.['required'] && (cpassword.dirty || cpassword.touched)" >
+              
+              Confirm Password is required.
+            </span>
+            <span *ngIf="message_cpassword">
+             {{message_cpassword}}
+            </span>
+            <span *ngIf="cpassword.errors?.['minlength']" >
+              Password should be more then 8 characters.
+            </span>
+            <span *ngIf="cpassword.errors?.['maxlength']" >
+              Password can not be longer than 20 characters.
+            </span>
+           </span></p>
+            <button type="submit" (click)="signup()" class="loginBtn">Sign Up</button>
+            <!-- <a href="#" class="forgotPassword">Forgot Password?</a> -->
+            <a href="#" class="forgotPassword">Log In</a>
+        </form>
+    </div>
+    <section class="imgSection">
+        <div class="img1">
+            <img src="./../../../../assets/img/logotrueCare.png" alt="#">
+        </div>
+        <div class="img2">
+            <img src="./../../../../assets/img/logoTrue.png" alt="#">
+        </div>
+       
+    </section>
+</main>

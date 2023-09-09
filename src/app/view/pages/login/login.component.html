@@ -1,0 +1,105 @@
+<header id="loginHeader">
+    <div class="img logo-dash">
+        <img src="./../../../../assets/img/logo video (1).gif" alt="logo">
+        <p>CLOVERLEAF <br><span class="logo-sm-txt">An Industry 4.0</span></p>
+    </div>
+   
+        <div class="headerMain">
+        <h1>Building the Future of Machine Service</h1>
+        <ul>
+        <li><a routerLink="/signup" class="signbtN">Sign Up</a></li>
+        <li class="logBtn"><a routerLink="/login" class="signbtN">Log In</a></li>
+        </ul>
+   
+    </div>
+</header>
+
+
+<main class="mainClass">
+    <div class="loginForm">
+        <form #loginForm="ngForm" >
+            <h2>Sign in your start session</h2>
+            <div class="inputWithIcon">
+                <label for="email">Email</label>
+                <input (click)="message_email = null" type="text" [(ngModel)]="loginData.email"  
+                class="form-control rounded-left" 
+                placeholder="Email" 
+                name="email"
+                pattern="/^[^\s@]+@[^\s@]+\.[^\s@]+$/"
+                required
+                #email = "ngModel"
+                minlength="4"
+                >
+                <i class='bx bx-envelope icon'></i>
+            </div>
+            <p class="p1" class="alert" > 
+                <span *ngIf="message_email">
+                   {{message_email}}
+                  </span>
+                <span  *ngIf="email.invalid && (email.dirty || email.touched)&&message_email==null"
+            >
+            <span *ngIf="email.errors?.['required'] && (email.dirty || email.touched)" class="alert">
+              email is required.
+            </span>
+           
+            <span *ngIf="!customEmailRegex.test(loginData.email)&&loginData.email!=''&&!email.errors?.['minlength'] " >
+              <!-- Password must contain at least osne uppercase,lowercase,number,special character. -->
+              Email should be like example@gmail.com
+            </span>
+            <span *ngIf="email.errors?.['minlength']" class="alert">
+              Email must be at least 4 characters.
+            </span></span></p>
+            <div class="inputWithIcon">
+                <label for="password">Password</label>
+                <input (click)="message_password = null" [(ngModel)]="loginData.password" 
+                type="password"
+                pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$/"
+                class="form-control rounded-left" 
+                placeholder="Password" 
+                required
+                name="password"
+                #password = "ngModel"
+                minlength="5">
+                <i class='bx bx-lock icon'></i>
+            </div>
+            <p class="p1" style="color: red;" class="alert" >
+                  
+                <span *ngIf="message_password">
+                   {{message_password}}
+                  </span>
+                <span  *ngIf="password.invalid && (password.dirty || password.touched)&&message_password==null"
+              >
+             
+              <span *ngIf="password.errors?.['required'] && (password.dirty || password.touched)" >
+              
+              Password is required.
+            </span>
+            <span *ngIf="message_password">
+             {{message_password}}
+            </span>
+            <span *ngIf="!customPasswordRegex.test(loginData.password)" >
+              <!-- Password must contain at least osne uppercase,lowercase,number,special character. -->
+              Password like Example@12
+            </span>
+            <span *ngIf="password.errors?.['minlength']" >
+              Password should be more then 8 characters.
+            </span>
+            <span *ngIf="password.errors?.['maxlength']" >
+              Password can not be longer than 20 characters.
+            </span>
+           </span></p>
+            <button type="submit" (click)="login()"   class="loginBtn">Log In</button>
+            <a href="#" class="forgotPassword">Forgot Password?</a>
+            <a routerLink="/signup" class="forgotPassword">Sign Up</a>
+        </form>
+    </div>
+    <section class="imgSection">
+        <div class="img1">
+            <img src="./../../../../assets/img/logotrueCare.png" alt="#">
+        </div>
+        <div class="img2">
+            <img src="./../../../../assets/img/logoTrue.png" alt="#">
+        </div>
+       
+    </section>
+</main>

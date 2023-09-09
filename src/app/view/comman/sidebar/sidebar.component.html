@@ -1,0 +1,30 @@
+<!-- navbar.component.html -->
+<nav class="navBar">
+    <div class="img">
+        <img src="./../../../../assets/img/logo video (1).gif" alt="logo">
+        <p>CLOVERLEAF <br><span class="logo-sm-txt">An Industry 4.0</span></p>
+    </div>
+
+    <ul class="Ul">
+
+        <a routerLink="/dashboard"><li class="txt-color"><i class='bx bxs-dashboard'></i>DASHBOARD</li></a>
+        <a routerLink="/workorder-management"><li class="txt-color"><i class='bx bx-user'></i>WORK ORDER MANAGEMENT</li></a>
+        <li class="dropdown">
+            <a (click)="toggleDropdown($event)"><i class='bx bx-book-content'></i>CLUSTER MANAGEMENT <i class='bx bx-plus-circle'
+                    id="test"></i></a>
+            <ul class="dropdown-content">
+                <a routerLink="/freelancer-dashboard"><li class="d">Freelancer Dashboard</li></a>
+                <hr style="height:1px;border-width:0;color:gray;background-color:#808080b0">
+                <li class="d"><a routerLink="/freelancer-registration">Freelancer Registration</a></li>
+                <hr style="height:1px;border-width:0;color:gray;background-color:#808080b0">
+                <li class="d"><a routerLink="/freelancer-assignment">Freelancer Assignment</a></li>
+                <hr style="height:1px;border-width:0;color:gray;background-color:#808080b0">
+                <li class="d"><a routerLink="/workorder-dashboard">Work Order Dashboard</a></li>
+                <hr style="height:1px;border-width:0;color:gray;background-color:#808080b0">
+                <li class="d"><a routerLink="/workorder-status">Work Order Status</a></li>
+            </ul>
+        </li>
+        <a routerLink="/clientmanagement"><li class="txt-color"><i class='bx bx-group'></i>CLIENT MANAGEMENT</li></a>
+        <a routerLink="/settings"><li class="txt-color"><i class='bx bx-cog'></i>SETTING</li></a>
+    </ul>
+</nav>

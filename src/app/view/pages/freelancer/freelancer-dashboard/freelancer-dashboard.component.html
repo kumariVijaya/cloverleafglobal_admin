@@ -1,0 +1,143 @@
+<app-sidebar></app-sidebar>
+<main id="main">
+       
+        <section id="content">
+            <form action="#">
+                <div class="form-group">
+                    <i class='bx bx-search'></i>
+                    <input type="text" placeholder="Search....">
+                    <i class='bx bx-slider'></i>
+                </div>
+            </form>
+            <div class="icon">
+                <a href="#" class="nav-link">
+                    <i class='bx bxs-bell'></i>
+                    <!-- <span class="badge">5</span> -->
+                </a>
+                <a href="#" class="nav-link">
+                    <i class='bx bx-power-off'></i>
+                    <!-- <span class="badge">8</span> -->
+                </a>
+                <a href="#" class="nav-link">
+                    <i class='bx bxs-user-circle'></i>
+                </a>
+            </div>
+
+        </section>
+        <p class="pClass">Freelancer Dashboard</p>
+        <div class="space">
+        <section class="content1Section">
+            <div class="data1">
+
+                <div class="data1-content1">
+                    <div class="txtContent">
+                        <h2>Earning</h2>
+                        <h2>Rs. 10,000</h2>
+                        <div class="data1-btn">
+                            <a href="#">+10% since last months</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="data1-content2">
+                    <div class="mg">
+                        <div class="datA1">
+                            <i class='bx bxs-square'></i>
+                            <h2>Rank <br><span class="sSize">in top 30%</span></h2><br>
+
+                        </div>
+                        <div class="datA1">
+                            <i class='bx bxs-square'></i>
+                            <h2>Rank <br><span class="sSize">in top 30%</span></h2><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="data2">
+                <h2>Your Project</h2>
+                <div class="data2Content">
+                    <table class="userTable">
+                        <tbody>
+                            <tr>
+                                <td class="userCell">
+                                    <img class="userImage" src="./img/user.png" alt="User Image">
+                                    <div class="userInfo">
+                                        <p class="userName">Machine Reparing</p>
+                                        <p class="activeDay">1 day Remaining</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="userCell">
+                                    <img class="userImage" src="./img/user.png" alt="User Image">
+                                    <div class="userInfo">
+                                        <p class="userName">Machine Reparing</p>
+                                        <p class="activeDay">10 day Remaining</p>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <!-- <div class="seeProjectBtn">
+                        <a href="#">See all Project</a>
+                    </div> -->
+                </div>
+                <div class="seeProjectBtn">
+                    <a href="#">See all Project</a>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="content2Section">
+            <div class="inVoice">
+                <h2>Recent Invoice</h2>
+                <div class="invoice-table">
+                    <table>
+                     
+                        <tbody>
+                            <tr *ngFor="let invoice of invoices">
+                              <td><img [src]="invoice.dp" alt="Developer DP" class="profile-image"></td>
+                              <td>{{ invoice.developer }}</td>
+                              <td><button>{{ invoice.paid ? 'Paid' : 'Late' }}</button></td>
+                              <td>Rs. {{ invoice.amount }}</td>
+                            </tr>
+                          </tbody>
+                        
+                    </table>
+                </div>
+            
+            </div>
+            <div class="projectRec">
+                <h2>Recommanded projecct</h2>
+                <div class="projectContent">
+                    <div class="profile">
+                        <div class="profileImage">
+                            <img src="./img/user.png" alt="#">
+                        </div>
+                        <h2>Richa Singh <span class="gp"> <br>uploadded 20min ago</span> </h2>
+                        <div class="projectBtn">
+                            <a href="#">Project</a>
+                        </div>
+                    </div>
+
+                    <div class="hdClass">
+                        <h3>Need a Freelacer to repaair machine for the packeging industry for my bussiness</h3>
+                    </div>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia cupiditate at ipsum dignissimos
+                        deserunt est nemo eaque accusantium rerum harum deserunt est nemo eaque accusantium rerum harum.
+                    </p>
+
+                    <div class="pay-form">
+                        <div class="input-container">
+                            <input type="text" placeholder="Enter amount">
+                            <button>Project</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    </main>
