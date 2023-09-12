@@ -20,6 +20,12 @@ import { WorkOrderDashboardComponent } from './view/pages/work-order/work-order-
 import { WorkOrderStatusComponent } from './view/pages/work-order/work-order-status/work-order-status.component';
 import { UserManagementComponent } from './view/pages/user-management/user-management.component';
 import { WorkOrderManagementComponent } from './view/pages/work-order/work-order-management/work-order-management.component';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
+import { ClientListComponent } from './view/pages/client/client-list/client-list.component';
+import { ClientAssetsComponent } from './view/pages/client/client-assets/client-assets.component';
+
  
 @NgModule({
   declarations: [
@@ -37,17 +43,22 @@ import { WorkOrderManagementComponent } from './view/pages/work-order/work-order
     WorkOrderStatusComponent,
     UserManagementComponent,
     WorkOrderManagementComponent,
+    ClientListComponent,
+    ClientAssetsComponent,
     
   ],
   imports: [
     BrowserModule,
     CommonModule,
     BrowserAnimationsModule,
+    CanvasJSAngularChartsModule,
     ToastrModule.forRoot({preventDuplicates : true}),
     AppRoutingModule,
     FormsModule,                               
     ReactiveFormsModule,
     HttpClientModule,
+    NgbModule,
+    RouterModule,
   ],
   providers: [
     ToastrService,

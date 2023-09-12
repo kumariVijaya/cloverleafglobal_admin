@@ -27,7 +27,7 @@
 
 
         </section>
-        <p class="pClass">Dashboard</p>
+        <!-- <p class="pClass">Dashboard</p>
         <section class="mainContent">
             <div class="piChart">
                 <h2>Work Order Summary</h2>
@@ -38,7 +38,36 @@
                 <canvas id="myVerticalChart"></canvas>
             </div>
 
-        </section>
+        </section> -->
+        <div>
+            <canvasjs-chart [options]="chartOption1" [styles]="{width: '50%', height:'400px'}"></canvasjs-chart>    
+        </div> 
+        <div>
+            <canvasjs-chart [options]="chartOption2" [styles]="{width: '50%', height:'360px'}"></canvasjs-chart>    
+        </div> 
+
+        <div class="calendar">
+            <div class="header">
+              <button (click)="prevMonth()">Previous</button>
+              <h2>{{ currentMonth | date: 'MMMM yyyy' }}</h2>
+              <button (click)="nextMonth()">Next</button>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th *ngFor="let day of days">{{ day }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let week of calendar">
+                  <td *ngFor="let day of week" (click)="selectDate(day)">
+                    {{ day.date | date: 'd' }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
         <section class="mainConten2">
             <div class="calender">
                 <div id="calendar">
@@ -210,31 +239,4 @@
 
 
     </script>
-    <script src="main.js"></script>
-    <script>
-        const dropdowns = document.querySelectorAll('.dropdown');
-
-        dropdowns.forEach(dropdown => {
-            const link = dropdown.querySelector('a');
-            const icons = dropdown.querySelectorAll('test');
-
-            link.addEventListener('click', (event) => {
-                // console.log("test");
-                event.preventDefault();
-                dropdown.classList.toggle('active');
-
-                icons.forEach(icon => {
-                    icon.classList.toggle('bx-plus-circle', !dropdown.classList.contains('active'));
-                    icon.classList.toggle('bx-minus-circle', dropdown.classList.contains('active'));
-                });
-
-                // Change the icon's position
-                if (dropdown.classList.contains('active')) {
-                    link.appendChild(icons[0]); // Move the minus icon to the end
-                }
-                else {
-                    link.insertBefore(icons[1], icons[0]);
-                }
-            });
-        });
-    </script>
+   

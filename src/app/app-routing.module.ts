@@ -11,6 +11,8 @@ import { WorkOrderDashboardComponent } from './view/pages/work-order/work-order-
 import { WorkOrderStatusComponent } from './view/pages/work-order/work-order-status/work-order-status.component';
 import { UserManagementComponent } from './view/pages/user-management/user-management.component';
 import { WorkOrderManagementComponent } from './view/pages/work-order/work-order-management/work-order-management.component';
+import { ClientListComponent } from './view/pages/client/client-list/client-list.component';
+import { ClientAssetsComponent } from './view/pages/client/client-assets/client-assets.component';
 
 const routes: Routes = [
 
@@ -89,6 +91,21 @@ const routes: Routes = [
   {
     path:'user-management',
     component:UserManagementComponent,
+    data:{
+      title:'Header'
+    }
+  },
+  {
+    path:'client',
+    component:ClientListComponent,
+    data:{
+      title:'Header'
+    }
+  },
+ 
+  {
+    path:'client-assets',
+    component:ClientAssetsComponent,
     data:{
       title:'Header'
     }

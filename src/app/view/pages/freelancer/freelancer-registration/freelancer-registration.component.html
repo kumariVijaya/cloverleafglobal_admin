@@ -1,1 +1,84 @@
-<p>freelancer-registration works!</p>
+<app-sidebar></app-sidebar>
+<main id="main">
+    <section id="content">
+        <form action="#">
+            <div class="form-group">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Search....">
+                <i class='bx bx-slider'></i>                
+            </div>
+        </form>
+        <div class="icon">
+            <a href="#" class="nav-link">
+                <i class='bx bxs-bell'></i>
+                <!-- <span class="badge">5</span> -->
+            </a>
+            <a href="#" class="nav-link">
+                <i class='bx bx-power-off'></i>
+                <!-- <span class="badge">8</span> -->
+            </a>
+            <a href="#" class="nav-link">
+                <i class='bx bxs-user-circle'></i>
+            </a>
+        </div>
+
+    </section>
+
+    <section class="loginSection">
+        <div class="heading">
+            <i class='bx bxs-lock-alt'></i>
+            <h1>Login Details</h1>
+            <i class='bx bx-minus' id="loginMinusIcon"></i>
+        </div>
+        <div class="loginDetailsForm" id="loginDetailsForm">
+
+            <!-- <label for="username">Username:</label> -->
+            <input type="text" id="username" name="username" required placeholder="UserName">
+
+            <!-- <label for="password">Password:</label> -->
+            <input type="password" id="password" name="password" required placeholder="Password">
+
+            <!-- <label for="confirmPassword">Confirm Password:</label> -->
+            <input type="password" id="confirmPassword" name="confirmPassword" required
+                placeholder="Confirm Password">
+
+            <!-- <label for="phoneNumber">Phone Number:</label> -->
+            <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Phone Number">
+
+            <!-- <label for="email">Email:</label> -->
+            <input type="email" id="email" name="email" required placeholder="Email">
+
+        </div>
+        <!-- <button type="submit">Submit</button> -->
+    </section>
+
+ 
+
+    <section class="loginSection">
+        <div class="heading">
+            <i class='bx bxs-lock-alt'></i>
+            <h1>Personal Details</h1>
+            <i class='bx bx-minus' id="personalMinusIcon"></i>
+        </div>
+        <div class="loginDetailsForm" id="personalDetailsForm">
+
+            <!-- <label for="username">Username:</label> -->
+            <input type="text" id="username" name="username" required placeholder="First Name">
+
+            <!-- <label for="password">Password:</label> -->
+            <input type="text" id="lastname" name="lname" required placeholder="Last Name">
+
+            <!-- <label for="confirmPassword">Confirm Password:</label> -->
+            <input type="text" id="gender" name="gender" required placeholder="Gender">
+
+            <input type="date" id="dob" name="dob" required placeholder="Date Of  Birth">
+
+            <input type="text" id="add" name="add" required placeholder="Address">
+
+            <!-- <label for="phoneNumber">Phone Number:</label> -->
+            <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Phone Number">
+             
+        </div>
+        <button type="submit" class="btn" >Create</button>
+    
+    </section>

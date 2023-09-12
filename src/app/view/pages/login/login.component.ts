@@ -50,6 +50,7 @@ export class LoginComponent {
       // ada token to localstorage.
       if(response.status){
         this.storage.set('token',response.token) ;
+        console.log(response.token);
      
         this.noty.success(response.message);
         this.router.navigate(['dashboard']);

@@ -43,7 +43,8 @@
               
               <th >subject</th>
               <th >Work Order status</th>
-              <th >Assigned User Id</th>
+              <th >Assigned User</th>
+              <th>Assign</th>
              
             </tr>
             </thead>
@@ -58,7 +59,10 @@
               <td>{{g.priority}}</td>
               <td>{{g.subject}}</td>
               <td>{{g.wo_status}}</td>
-              <td>{{g.assigned_user_id}}</td>
+              <td>{{g.assigned_user.name}}</td>
+              <td><button *ngIf="g.assigned_user_id==null||g.assigned_user_id==''||g.assigned_user_id==0"  (click)="(open(modelGroupAdd, 'lg',g.work_id))">Assign</button>
+                  <button *ngIf="g.assigned_user_id" (click)="assignUser(g.work_id,0)">UnAssigns</button>
+                    </td>
             </tr>
             </tbody>
             </table>
@@ -66,5 +70,30 @@
            
         </div>
     </section>
+    <ng-template #modelGroupAdd let-c="close" let-d="dismiss" >
+    <div class="modal-header">
+    <h4 class="modal-title">User List For Assign</h4>
+
+    <button type="button" class="close" (click)="d('Cross click')">×</button>
+    </div>
+      <div class="mb-3" style="margin-left: 50px;">
+                <div ngbDropdown class="d-inline-block">
+                    <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                        Select User for assign task
+                    </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1"  >
+                        <div *ngFor="let item of users">
+                        <button ngbDropdownItem (click)="assignUser(temp_work_id,item.id)">{{item.name}}</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+  
+    <div class="modal-footer">
+      <button class="btn btn-white" (click)="c('Close click')">Close</button>
+  </div>
+ 
+  </ng-template>
+
 </main>
 

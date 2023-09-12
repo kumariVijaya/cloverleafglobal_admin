@@ -1,0 +1,42 @@
+<app-sidebar></app-sidebar>
+<main id="main">
+
+    <section>
+    <div class="mb-3" style="margin-left: 50px;">
+        <div ngbDropdown class="d-inline-block">
+            <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                Select Customer for assets List
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1"  >
+                <div *ngFor="let item of client">
+                <button ngbDropdownItem (click)="assetsList(item.Id)">{{item.Name}}</button>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section>
+        <div class="table">
+        <table id="userTable">
+            <thead>
+            <tr >
+              <th >Sr No.</th>
+              <th >Name.</th>
+            
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let g of clientAssets; let i =index">
+              <th >{{i+1}}</th>
+              <td>{{g.name}}</td>
+            
+          
+            </tr>
+            </tbody>
+            </table>
+       
+           
+        </div>
+    </section>
+</main>

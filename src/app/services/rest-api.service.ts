@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { delay, map, catchError } from 'rxjs/operators';
 import { StorageService } from './storage.service';
 import { environment } from 'src/environments/environment.development';
+import { ThisReceiver } from '@angular/compiler';
 @Injectable({
   providedIn: 'root'
 })
@@ -115,6 +116,30 @@ export class RestApiService {
   public getWorkOrderList()
   {
     return this.get(this.getApiUrl('deshboard-work-list'));
+  }
+
+  public getUserList()
+  {
+    return this.get(this.getApiUrl('user-list'));
+  }
+
+  public getClientList()
+  {
+    return this.get(this.getApiUrl('deshboard-client-list'));
+  }
+  
+  public getAssetsList(client_id:any)
+  {
+    return this.get(this.getApiUrl('deshboard-assets-of-Client/'+client_id));
+  }
+
+  public assignWork(work_id:any,user_id:any)
+  {
+    const formData = {
+      work_id: work_id,
+      user_id: user_id,
+    };
+    return this.post(this.getApiUrl('deshboard-update-assign'),formData)
   }
   /**
    * @use Login api
