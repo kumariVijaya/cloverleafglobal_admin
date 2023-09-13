@@ -1,0 +1,29 @@
+#main{
+    padding: 0px 25px 0px 25px;
+    margin-left: 250px;
+    border-radius: 0px 30px 30px 0px;
+    background: #f7f7f7;
+  
+  }
+.icon {
+    // position: absolute;
+    // right: 10px;
+    color: #ccc;
+    font-size: 20px;
+    margin-top: 10px;
+    /* Adjust the icon's color and size as needed */
+  .icon.bx-envelope, .icon.bx-lock,.bx-user, .bx-phone {
+    color: #0c8f52;
+  }
+  .nav-link {
+    color: #888;
+    margin-left:5px;
+    text-decoration: none;
+    position: relative;
+    i {
+        font-size: 24px;
+      }
+      
+  }
+  }
+  

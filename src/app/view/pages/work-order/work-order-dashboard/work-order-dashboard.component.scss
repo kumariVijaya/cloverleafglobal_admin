@@ -1,0 +1,149 @@
+
+.icon {
+    // position: absolute;
+    // right: 10px;
+    color: #ccc;
+    font-size: 20px;
+    margin-top: 10px;
+    /* Adjust the icon's color and size as needed */
+  .icon.bx-envelope, .icon.bx-lock,.bx-user, .bx-phone {
+    color: #0c8f52;
+  }
+  .nav-link {
+    color: #888;
+    margin-left:5px;
+    text-decoration: none;
+    position: relative;
+    i {
+        font-size: 24px;
+      }
+      
+  }
+  }
+  
+  
+.clientDetails {
+   
+    /* width: 50%; Adjust width based on your layout */
+    /* background-color: rgb(140, 63, 63); */
+   
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    color: rgb(63 63 63);
+    margin-left: 20px; /* Add some spacing between the calendar and the table */
+    h1{
+        font-weight: 700;
+      }
+      .weekdays {
+        color: #777;
+        margin: 0;
+        /* padding: 10px 0; */
+        /* background-color: #ddd; */
+        li {
+            display: inline;
+            width: 14.28%;
+            text-align: center;
+            font-weight: bold;
+          }
+          .days li {
+            list-style-type: none;
+            display: inline-block;
+            width: 14.28%;
+            text-align: center;
+            /* margin-bottom: 5px; */
+            font-size: 10px;
+            color: #777;
+          }
+      }
+  }
+ 
+  /* Table styling */
+  #clientsTable {
+    color: #777;
+  
+    margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+    tr {
+        th{
+            font-size: 1.3rem;
+            font-weight: bold;
+            padding: 10px;
+            /* border: 1px solid #ccc; */
+            text-align: center;
+          }
+          td{
+            padding: 10px;
+            /* border: 1px solid #ccc; */
+            text-align: center;
+            font-weight: 400;
+
+          }
+    }
+  }
+
+
+  
+  .calender{
+  
+    #calendar {
+        font-family: Arial, sans-serif;
+        border-collapse: collapse;
+        /* width: 40%;
+        margin-left: auto;
+        margin-right: auto; */
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        height: 100%;
+        padding: 10px;
+        .month{
+          margin-bottom: 15px;
+        }
+        ul.weekdays {
+          margin: 0;
+          padding: 0;
+          /* background: #1abc9c; */
+          text-align: center;
+          color: #777;
+          li {
+      
+            display: inline;
+            font-weight: bold;
+            padding: 12px;
+        }
+      
+      }
+    }
+}
+
+#calendar .days li:hover {
+    background: #f2f2f2;
+  }
+  
+  #calendar .days li.current {
+    background: #1abc9c;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+  }
+  
+  #calendar .prev, #calendar .next {
+    cursor: pointer;
+    user-select: none;
+    padding: 10px 25px;
+    background-color: #1abc9c;
+    color: white;
+    text-align: center;
+  }
+  
+  #calendar .prev:hover, #calendar .next:hover {
+    background-color: #16a085;
+  }
+  
+    
+    
+    

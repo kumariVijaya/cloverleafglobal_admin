@@ -1,0 +1,28 @@
+.btnCreate {
+    a{
+    color: #fff;
+    width: fit-content;
+/* border: 1px solid black; */
+padding: 10px 15px 10px 15px;
+background-color: #007645;
+float: right;
+border-radius: 10px;
+font-size: 1.4rem;
+margin-top: -25px;
+
+    i{
+      margin-right: 5px;
+    }
+  }
+  &:hove{
+    color:#007645;
+    background:#fff;
+  }
+
+
+}
+
+
+
+
+

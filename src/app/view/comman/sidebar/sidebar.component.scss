@@ -1,0 +1,112 @@
+
+/* Basic styles for the navigation bar */
+.navBar {
+    width: 250px;
+    background-color:#0b3926;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    border-radius: 15px 0px 0px 15px;
+    .img {
+      display: flex;
+      align-items: center;
+      padding: 20px 0px 20px 5px;
+      font-size: 25px;
+      img{
+        max-width: 35px;
+        margin-right: 10px;
+        margin-top: -26px;
+      }
+    }
+  }
+  
+  
+  
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    /* font-weight: 300; */
+  
+    font-size: 1.4rem;
+    padding: 15px 10px;
+  
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .logBtn a{
+    background-color: #fff;
+    color: #0c8f52;
+  }
+  a{ text-decoration:none;}
+  .Ul li a{
+    color: #fff;
+    text-decoration:none;
+    i{
+      font-size:18px;
+    }
+  }
+  
+  .Ul li:hover {
+    background-color: #0c8f52;
+    text-decoration:none;
+  }
+  
+  li i {
+    margin-right: 10px;
+  }
+  
+  /* ... (other styles) ... */
+  .dropdown-content {
+    display: none;
+    background-color: #1c4232;
+    border-radius: 0 0 15px 15px;
+    margin-top: 10px;
+  }
+  
+  .dropdown-content li {
+    padding: 10px;
+    transition: all 0.4s ease;
+  }
+  .dropdown-content li:hover{
+    transform: translateY(-3px) translateX(-5px);
+  }
+  
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown.active i:last-child {
+    display: inline-block;
+  }
+
+  
+  .dropdown.active i:first-child {
+    display: inline;
+  }
+  
+  
+  
+  .Ul li.dropdown:hover {
+    background-color: #0b3926; /* Keep the background color when hovering over the whole "Cluster Management" menu */
+  }
+  
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+  
+  /* Remove background color change when hovering over the dropdown content */
+  .dropdown.active .dropdown-content li:hover {
+    transform: translateY(-3px) translateX(-5px);
+    background-color: #0a764a;
+  }
+
+  
+  

@@ -1,56 +1,45 @@
 
-<main id="main">
-    <section id="content">
-        <form action="#">
-            <div class="form-group">
-                <i class='bx bx-search'></i>
-                <input type="text" placeholder="Search....">
-                <i class='bx bx-slider'></i>                
-            </div>
-        </form>
-        <div class="icon">
-            <a href="#" class="nav-link">
-                <i class='bx bxs-bell'></i>
-                <!-- <span class="badge">5</span> -->
-            </a>
-            <a href="#" class="nav-link">
-                <i class='bx bx-power-off'></i>
-                <!-- <span class="badge">8</span> -->
-            </a>
-            <a href="#" class="nav-link">
-                <i class='bx bxs-user-circle'></i>
-            </a>
+<main id="main" class="p-5">
+    <app-header></app-header>
+    <section id="" class="container">
+    <div class="row">
+        <div class="col-lg-10">
+            <div class="card">
+                <div class="card-body fs-4 text">
+                    Work Order Management
+                </div>
+              </div>
         </div>
-
-        
-    </section>
-    <p class="pClass">User Dashboard</p>
-    <div class="btnCreate">
-        <a href="create.html"><i class='bx bxs-plus-circle'></i>Create</a>
+        <div class="col-lg-2">
+            <div class="">
+                <a href="create.html" class="btn btn-secondary custom-btn"><i class='bx bxs-plus-circle fs-3 text px-2'></i>Create</a>
+            </div>
+        </div>
     </div>
-    <section>
-        <div class="table">
-        <table id="userTable">
+   
+    <div class="row">
+            <div class="col-lg-12">
+        <div class="table table-responsive">
+        <table id="userTable" class="table table-hover table-striped">
             <thead>
-            <tr >
-              <th >Sr No.</th>
-              <th >asset</th>
-              <th >category</th>
-              <th >Description</th>
-              <th >location</th>
-              <th >status</th>
-              <th >priority</th>
-              
-              <th >subject</th>
-              <th >Work Order status</th>
-              <th >Assigned User</th>
-              <th>Assign</th>
+            <tr>
+              <th scope="col">Sr No.</th>
+              <th scope="col">Asset</th>
+              <th scope="col">Category</th>
+              <th scope="col">Description</th>
+              <th scope="col">Location</th>
+              <th scope="col">Status</th>
+              <th scope="col">priority</th>
+              <th scope="col">subject</th>
+              <th scope="col">Work Order</th>
+              <th scope="col">Assigned User</th>
+              <th scope="col">Assign</th>
              
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let g of work_order; let i =index">
-              <th >{{i+1}}</th>
+              <td>{{i+1}}</td>
               <td>{{g.asset}}</td>
               <td>{{g.category}}</td>
               <td>{{g.desc}}</td>
@@ -60,16 +49,17 @@
               <td>{{g.subject}}</td>
               <td>{{g.wo_status}}</td>
               <td>{{g.assigned_user.name}}</td>
-              <td><button *ngIf="g.assigned_user_id==null||g.assigned_user_id==''||g.assigned_user_id==0"  (click)="(open(modelGroupAdd, 'lg',g.work_id))">Assign</button>
-                  <button *ngIf="g.assigned_user_id" (click)="assignUser(g.work_id,0)">UnAssigns</button>
+              <td><button class="btn btn-secondary custom-btn" *ngIf="g.assigned_user_id==null||g.assigned_user_id==''||g.assigned_user_id==0"  (click)="(open(modelGroupAdd, 'lg',g.work_id))">Assign</button>
+                  <button class="btn btn-secondary custom-btn" *ngIf="g.assigned_user_id" (click)="assignUser(g.work_id,0)">UnAssigns</button>
                     </td>
             </tr>
-            </tbody>
-            </table>
+         </tbody>
+     </table>
        
            
         </div>
-    </section>
+    </div>
+    </div>
     <ng-template #modelGroupAdd let-c="close" let-d="dismiss" >
     <div class="modal-header">
     <h4 class="modal-title">User List For Assign</h4>
@@ -94,6 +84,6 @@
   </div>
  
   </ng-template>
-
+</section>
 </main>
 

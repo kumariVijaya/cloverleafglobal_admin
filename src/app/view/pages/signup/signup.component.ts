@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NotifyService } from 'src/app/services/notify.service';
 import { RestApiService } from 'src/app/services/rest-api.service';
-import Swal from 'sweetalert2';
+//import Swal from 'sweetalert2';
 import { environment } from '../../../../environments/environment.development';
 
 
@@ -39,7 +39,7 @@ export class SignupComponent {
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.    
+    //Add 'implements OnInit' to the class.
     this.baseUrl_logo = environment.base_url+"assets/img/logo video (1).gif";
     this.baseUrl_truecare = environment.base_url+"assets/img/logotrueCare.png";
     this.baseUrl_truesense = environment.base_url+"assets/img/logoTrue.png";
@@ -80,11 +80,11 @@ export class SignupComponent {
     }
 
     if(this.customEmailRegex.test(this.user.email)&&this.customPasswordRegex.test(this.user.password)){
-     
+
     this.restApi.signup(this.user).subscribe((response:any) => {
       // ada token to localstorage.
       if(response.status){
-        Swal.fire('Successfully done',response.message,'success');
+       // Swal.fire('Successfully done',response.message,'success');
         this.router.navigate(['login']);
       }
       if(!response.status)
@@ -93,7 +93,7 @@ export class SignupComponent {
       }
     });
   }
-    
+
   }
 
 }

@@ -12,6 +12,7 @@ export class SidebarComponent {
   constructor() { }
   ngOnInit(): void {
     this.baseUrl = environment.base_url + "assets/img/logo video (1).gif";
+    
   }
   toggleDropdown(event: Event): void {
     event.preventDefault();
