@@ -75,7 +75,7 @@ export class RestApiService {
       'Content-Type': 'application/json',
     });
 
-    if (this.auth_token) {
+    if (auth_token) {
 
       headers = new HttpHeaders({
         'Accept': 'application/json',

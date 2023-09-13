@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { environment } from '../../../../environments/environment.development';
+
 
 @Component({
   selector: 'app-sidebar',
@@ -6,6 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
+  baseUrl: any;
+  constructor() { }
+  ngOnInit(): void {
+    this.baseUrl = environment.base_url + "assets/img/logo video (1).gif";
+  }
   toggleDropdown(event: Event): void {
     event.preventDefault();
     const dropdown = (event.target as HTMLElement).closest('.dropdown');
@@ -13,7 +20,7 @@ export class SidebarComponent {
 
     if (dropdown) {
       dropdown.classList.toggle('active');
-  
+
       if (icons) {
         icons.forEach(icon => {
           icon.classList.toggle('bx-plus-circle', !dropdown.classList.contains('active'));

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { NotifyService } from 'src/app/services/notify.service';
 import { RestApiService } from 'src/app/services/rest-api.service';
 import Swal from 'sweetalert2';
+import { environment } from '../../../../environments/environment.development';
 
 
 @Component({
@@ -11,6 +12,10 @@ import Swal from 'sweetalert2';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent {
+  baseUrl_logo: any;
+  baseUrl_truecare: any;
+  baseUrl_truesense: any;
+  baseUrl: any;
   customPasswordRegex: RegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$/;
   customEmailRegex: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -31,6 +36,14 @@ export class SignupComponent {
     private router:Router,
     private noty: NotifyService
   ) { }
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.    
+    this.baseUrl_logo = environment.base_url+"assets/img/logo video (1).gif";
+    this.baseUrl_truecare = environment.base_url+"assets/img/logotrueCare.png";
+    this.baseUrl_truesense = environment.base_url+"assets/img/logoTrue.png";
+  }
 
   public signup() {
     if(this.user.email==''||this.user.email==null)

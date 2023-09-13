@@ -13,6 +13,7 @@ import { UserManagementComponent } from './view/pages/user-management/user-manag
 import { WorkOrderManagementComponent } from './view/pages/work-order/work-order-management/work-order-management.component';
 import { ClientListComponent } from './view/pages/client/client-list/client-list.component';
 import { ClientAssetsComponent } from './view/pages/client/client-assets/client-assets.component';
+import { AuthGuard } from './services/auth/auth.guard';
 
 const routes: Routes = [
 
@@ -23,13 +24,7 @@ const routes: Routes = [
       title:'Header'
     }
   },
-  {
-    path:'login',
-    component:LoginComponent,
-    data:{
-      title:'Header'
-    }
-  },
+  
   {
     path:'signup',
     component:SignupComponent,
@@ -37,81 +32,89 @@ const routes: Routes = [
       title:'Header'
     }
   },
-  {
+  { 
     path:'dashboard',
     component:DashboardComponent,
-    data:{
-      title:'Header'
-    }
+  
+    children:[
+        {
+          path:'freelancer-dashboard',
+          component:FreelancerDashboardComponent,
+          data:{
+            title:'Header'
+          }
+        },
+      
+        {
+          path:'freelancer-registration',
+          component:FreelancerRegistrationComponent,
+          data:{
+            title:'Header'
+          }
+        },
+      
+        {
+          path:'freelancer-assignment',
+          component:FreelancerAssignmentComponent,
+          data:{
+            title:'Header'
+          }
+        },
+        {
+          path:'workorder-dashboard',
+          component:WorkOrderDashboardComponent,
+          data:{
+            title:'Header'
+          }
+        },
+        {
+          path:'workorder-status',
+          component:WorkOrderStatusComponent,
+          data:{
+            title:'Header'
+          }
+        },
+        {
+          path:'workorder-management',
+          component:WorkOrderManagementComponent,
+          data:{
+            title:'Header'
+          }
+        },
+        {
+          path:'user-management',
+          component:UserManagementComponent,
+          data:{
+            title:'Header'
+          }
+        },
+        {
+          path:'client',
+          component:ClientListComponent,
+          data:{
+            title:'Header'
+          }
+        },
+      
+        {
+          path:'client-assets',
+          component:ClientAssetsComponent,
+          data:{
+            title:'Header'
+          }
+        },
+  ],
+  canActivate:[AuthGuard]
   },
   {
-    path:'freelancer-dashboard',
-    component:FreelancerDashboardComponent,
+    path:'login',
+    component:LoginComponent,
     data:{
       title:'Header'
     }
   },
- 
-  {
-    path:'freelancer-registration',
-    component:FreelancerRegistrationComponent,
-    data:{
-      title:'Header'
-    }
-  },
- 
-  {
-    path:'freelancer-assignment',
-    component:FreelancerAssignmentComponent,
-    data:{
-      title:'Header'
-    }
-  },
-  {
-    path:'workorder-dashboard',
-    component:WorkOrderDashboardComponent,
-    data:{
-      title:'Header'
-    }
-  },
-  {
-    path:'workorder-status',
-    component:WorkOrderStatusComponent,
-    data:{
-      title:'Header'
-    }
-  },
-  {
-    path:'workorder-management',
-    component:WorkOrderManagementComponent,
-    data:{
-      title:'Header'
-    }
-  },
-  {
-    path:'user-management',
-    component:UserManagementComponent,
-    data:{
-      title:'Header'
-    }
-  },
-  {
-    path:'client',
-    component:ClientListComponent,
-    data:{
-      title:'Header'
-    }
-  },
- 
-  {
-    path:'client-assets',
-    component:ClientAssetsComponent,
-    data:{
-      title:'Header'
-    }
-  },
- 
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
